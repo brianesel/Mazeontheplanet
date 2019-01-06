@@ -6,21 +6,31 @@ public class Rotate : MonoBehaviour {
     public float rotationAngleSpeed;
     public KeyCode rotRight;
     public KeyCode rotLeft;
+    public bool rotrightbuttonpress;
+    public bool rotleftbuttonpress;
     // Use this for initialization
     void Start () {
-		
-	}
+        rotrightbuttonpress = false;
+        rotleftbuttonpress = false;
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+        if (Input.GetKey(rotLeft)) { rotleftbuttonpress = true; }
+        if (Input.GetKey(rotRight)) { rotrightbuttonpress = true; }
+
         // Rotate x axis left and right ( horizontal)
-        if (Input.GetKey(rotLeft))
+        if (rotleftbuttonpress == true)
         {
             transform.Rotate(Vector3.up, -rotationAngleSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(rotRight))
+        else { }
+
+        if (rotrightbuttonpress == true)
         {
             transform.Rotate(Vector3.up, rotationAngleSpeed * Time.deltaTime);
+
         }
+        else { }
     }
 }

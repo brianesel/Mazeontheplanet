@@ -107,7 +107,7 @@ public class GravMan2 : MonoBehaviour
                 gravityKeyPressed = false;
             }
         }
-        else { Debug.Log("No collide gravbox"); }
+        else {  }
 
     }
 

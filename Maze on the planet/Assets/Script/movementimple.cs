@@ -20,7 +20,7 @@ public class movementimple : MonoBehaviour
     {
 
     }
-    private void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey(forwardKey)) { forwardKeyPress = true; }
         else { forwardKeyPress = false; }
@@ -30,6 +30,7 @@ public class movementimple : MonoBehaviour
         else { rightwardKeyPress = false; }
         if (Input.GetKey(backwardKey)) { backwardKeyPress = true; }
         else { backwardKeyPress = false; }
+
         // moving 2d with assigned keyboard
         if (Input.GetKey(KeyCode.LeftShift) && forwardKeyPress == true) {
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;

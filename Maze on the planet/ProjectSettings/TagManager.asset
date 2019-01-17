@@ -9,6 +9,7 @@ TagManager:
   - GravBox3
   - TeleLoc1
   - TeleSphere
+  - Info
   layers:
   - Default
   - TransparentFX
